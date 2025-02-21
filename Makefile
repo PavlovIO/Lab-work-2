@@ -1,6 +1,6 @@
 # Переменные
 CXX = g++
-CXXFLAGS = -Wall -Werror -Wpedantic -g -std=c++11 -I./src
+CXXFLAGS = -Wall -Werror -Wpedantic -g -std=c++23 -I./src
 LDFLAGS = -lgtest -lgtest_main -pthread
 
 # Директории
