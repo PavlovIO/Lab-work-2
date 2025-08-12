@@ -1,0 +1,21 @@
+{
+"units": [
+{
+  "id": "battle_mage_01",
+  "name": "Боевой маг",
+  "type": "character",
+  "stats": {
+    "cost": 5,
+    "attack": 4,
+    "health": 6
+  },
+  "abilities": [
+    {
+      "ability_id": "magic_burst",
+      "trigger": "on_attack",
+      "conditions": []
+    }
+  ]
+}
+]
+}

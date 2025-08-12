@@ -1,0 +1,59 @@
+{
+"spells": [
+{
+    "id": "magic_burst",
+    "name": "Магический взрыв",
+    "description": "Наносит 2 урона всем вражеским картам",
+    "effects": [
+    {
+        "type": "deal_damage",
+        "amount": 2,
+        "target": "all_enemy_cards"
+    }
+    ],
+    "targeting": {
+    "type": "Automatic",
+    "target": "all_enemy_cards"
+    }
+},
+{
+    "id": "death_draw",
+    "name": "Последнее вдохновение", 
+    "description": "Добирает 1 карту при смерти",
+    "effects": [
+    {
+        "type": "draw_cards",
+        "count": 1,
+        "target_player": "owner"
+    }
+    ],
+    "targeting": {
+    "type": "Automatic",
+    "target": "owner"
+    }
+},
+{
+  "id": "aoe_damage_and_heal",
+  "name": "Божественное вмешательство",
+  "description": "Наносит 2 урона всем вражеским картам и восстанавливает 3 здоровья всем дружеским",
+  "trigger": "on_play",
+  "conditions": [],
+  "effects": [
+    {
+      "type": "deal_damage",
+      "amount": 2,
+      "target": "all_enemy_cards"
+    },
+    {
+      "type": "heal",
+      "amount": 3,
+      "target": "all_friendly_cards"
+    }
+  ],
+  "targeting": {
+    "type": "automatic",
+    "targets": ["all_enemy_cards", "all_friendly_cards"]
+  }
+}
+]
+}
