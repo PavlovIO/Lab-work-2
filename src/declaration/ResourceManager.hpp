@@ -3,23 +3,37 @@
 
 #include "libraries.hpp"
 #include "enumClasses.hpp"
+#include "Card.hpp"
 
 class ResourceManager
 {
 private:
-    std::map<std::string, std::string> cardStats;
-    std::map<std::string, std::string> cardAbilities;
-    std::map<std::string, std::string> cardTextures;
+    std::string CARD_FILE = "..\\..\\assets\\data\\defenitions\\card.json";
+    std::string SPELL_FILE = "..\\..\\assets\\data\\defenitions\\spell.json";
+    std::string TEXTURE_FILE = "..\\..\\assets\\textures\\card_textures\\";
+    std::string TEMPLATES_FILE = "..\\..\\assets\\textures\\templates\\";
+
     std::map<std::string, std::string> UITextures;
     std::map<std::string, std::string> stateTextures;
     
+    std::map<std::string, Card>g_card_db;
+    std::map<std::string, Ability>g_spell_db;
+    std::map<std::string, std::string> g_card_textures;
+
 public:
+/*    
     ResourceManager();
     ~ResourceManager();
-    void LoadCardStats(std::string cardId);
-    void LoadCardTexture(std::string cradId);
-    void LoadUITextures();
-    void stateTexture(State State);
+*/
+    bool LoadCards();
+    bool LoadSpells();
+    bool LoadCardTextures();
+    bool LoadUITextures();
+    bool LoadStateTextures();
+
+    void ReadAllCards();
+    void ReadAllSpells();
+    void ReadAllCardTextures();
 };
 
 #endif

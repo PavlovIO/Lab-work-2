@@ -4,6 +4,7 @@
     "id": "magic_burst",
     "name": "Магический взрыв",
     "description": "Наносит 2 урона всем вражеским картам",
+    "trigger": "on_attack",
     "effects": [
     {
         "type": "deal_damage",

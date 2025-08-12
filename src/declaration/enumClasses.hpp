@@ -12,20 +12,4 @@ enum Affix {
     OverKill,
     Armored
 };
-
-enum TriggerType
-{
-    onPlay,
-    onAttack,
-    onDefend,
-    onDeath,
-    onDeathAlly,
-    onDeathFoe,
-    onTurnStart,
-    onTurnEnd,
-    onDamageTaken,
-    onSummon,
-    onCast,
-    onDiscard
-};
 #endif

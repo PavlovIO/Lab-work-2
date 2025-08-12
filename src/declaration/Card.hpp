@@ -3,20 +3,22 @@
 
 #include "libraries.hpp"
 #include "enumClasses.hpp"
-#include "Stats.hpp"
 #include "Ability.hpp"
 
 class Card
 {
 private:
+    
+
+public:
     std::string id;
     std::string type;
     std::string name;
-    Affix affix;
-    Stats stats;
-    Ability ability;
-public:
-
+    int cost;
+    int health;
+    int attack;
+    std::vector<Affix> affixes;
+    std::vector<std::string> abilities_id;
 
 };
 

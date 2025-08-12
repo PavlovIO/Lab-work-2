@@ -2,15 +2,32 @@
 #define ABILITY_H
 
 #include "libraries.hpp"
-#include "enumClasses.hpp"
 
 struct Ability
 {
-    std::string abilityId;
+    std::string ability_id;
     std::string name;
     std::string description;
-    TriggerType triggerType;
+    TriggerType trigger_type;
+    std::vector<Condition> conditions;
+    std::vector<Effect> effects;
+    Targeting targeting;
+};
 
+enum TriggerType
+{
+    on_play,
+    on_attack,
+    on_defend,
+    on_death,
+    on_death_ally,
+    on_death_foe,
+    on_turn_start,
+    on_eurn_end,
+    on_damage_taken,
+    on_summon,
+    on_cast,
+    on_discard
 };
 
 struct Effect
@@ -18,24 +35,20 @@ struct Effect
     std::string type;
     int amount;
     std::string target;
-    std::string targetPlayer;
-    EffectType effectType;
+    std::string target_player;
+    std::string effect_type; /*stun, spell_shield*/
     int duration;
-};
-enum EffectType  //add more
-{
-    stun,
-    spellshield
 };
 
 struct Condition
 {
     std::string type;
-    Operator logicOp; // not sure about this
+    //Operator logic_op; // not sure about this
     int value;
-    std::string targetPlayer; // owner, foe, both 
+    std::string target_player; // owner, foe, both 
 
 };
+
 enum Operator
 {
     AND,
@@ -44,13 +57,16 @@ enum Operator
 
 struct Targeting
 {
-    TargetType targetType;
+    std::string target_type;
+    std::vector<std::string> targets;
 };
-enum TargetType
-{
-    SelectTarget,
-    Automatic,
-    RandomTarget,
-    AllTargets
-};
+/*
+    select_target,
+    automatic,
+    random_target,
+    all_targets  
+*/
+
+
+
 #endif
