@@ -3,11 +3,15 @@
 
 #include "libraries.hpp"
 #include "GameState.hpp"
+#include "ResourceManager.hpp"
+#include "UIManager.hpp"
 
 class StateManager
 {
 private:
-    std::unique_ptr<GameState> currentState;
+    GameState* current_state;
+    ResourceManager* RM;
+    UIManager* UIM;
 public:
     StateManager();
     ~StateManager();
@@ -15,7 +19,7 @@ public:
     void changeState(State newState);
 
     GameState getCurState();
-    void setCurState(GameState State);
+    
 };
 
 #endif

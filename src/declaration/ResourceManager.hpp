@@ -14,17 +14,20 @@ private:
     std::string TEMPLATES_FILE = "..\\..\\assets\\textures\\templates\\";
 
     std::map<std::string, std::string> UITextures;
-    std::map<std::string, std::string> stateTextures;
+    std::map<State, std::map<std::string,std::string>> stateTextures;
     
     std::map<std::string, Card>g_card_db;
     std::map<std::string, Ability>g_spell_db;
     std::map<std::string, std::string> g_card_textures;
 
 public:
-/*    
-    ResourceManager();
-    ~ResourceManager();
-*/
+    std::map<std::string, std::string> getUITextures();
+    std::map<std::string, std::string> getstateTextures(State state);
+    
+    std::map<std::string, Card> getg_card_db();
+    std::map<std::string, Ability> getg_spell_db();
+    std::map<std::string, std::string> getg_card_textures();
+
     bool LoadCards();
     bool LoadSpells();
     bool LoadCardTextures();

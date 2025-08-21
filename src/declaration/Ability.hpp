@@ -3,8 +3,10 @@
 
 #include "libraries.hpp"
 
-struct Ability
+class Ability
 {
+public:
+
     std::string ability_id;
     std::string name;
     std::string description;
@@ -49,12 +51,13 @@ struct Condition
 
 };
 
+/*
 enum Operator
 {
     AND,
     OR
 };
-
+*/
 struct Targeting
 {
     std::string target_type;

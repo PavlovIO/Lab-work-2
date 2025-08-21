@@ -1,5 +1,5 @@
-#ifndef MATCH_MANAGER_H
-#define MATCH_MANAGER_H
+#ifndef CARD_MANAGER_H
+#define CARD_MANAGER_H
 
 #include "libraries.hpp"
 #include "enumClasses.hpp"
@@ -7,10 +7,8 @@
 
 class Card
 {
-private:
-    
-
 public:
+   
     std::string id;
     std::string type;
     std::string name;

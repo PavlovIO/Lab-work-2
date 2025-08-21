@@ -2,7 +2,11 @@
 #define ENUM_CLASSES_H
 
 enum State {
-    MainMenu
+    nan_state,
+    main_menu,
+    deck_prep,
+    library,
+    game_prep
 
 };
 

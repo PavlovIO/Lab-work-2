@@ -26,6 +26,10 @@ bool ResourceManager::LoadSpells()
         {
             Ability spell;
             spell.ability_id = spellJson["id"];
+            if (g_spell_db.find(spellJson["id"]) != g_spell_db.end())
+            {
+                continue;
+            }
             spell.name = spellJson["name"];
             spell.description = spellJson["description"];
 
@@ -103,6 +107,10 @@ bool ResourceManager::LoadCards()
         for (const auto& cardJson : j["cards"])
         {
             Card card;
+            if (g_card_db.find(cardJson["id"]) != g_card_db.end())
+            {
+                continue;
+            }
             card.id = cardJson["id"];
             card.type = cardJson["type"];
             card.name = cardJson["name"];
@@ -137,3 +145,23 @@ bool ResourceManager::LoadCards()
     return true;
 };
 
+std::map<std::string, std::string> ResourceManager::getUITextures()
+{
+    return this->UITextures;
+};
+std::map<std::string,std::string> ResourceManager::getstateTextures(State state)
+{
+    return this->stateTextures[state];
+};
+std::map<std::string, Card> ResourceManager::getg_card_db()
+{
+    return this->g_card_db;
+};
+std::map<std::string, Ability> ResourceManager::getg_spell_db()
+{
+    return this->g_spell_db;
+};
+std::map<std::string, std::string> ResourceManager::getg_card_textures()
+{
+    return this->g_card_textures;
+};
